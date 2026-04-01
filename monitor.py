@@ -350,11 +350,7 @@ def main():
     init_db()
     import_urls_din_fisier("produse.txt")
     ruleaza_verificare()
-    schedule.every(CONFIG["interval_ore"]).hours.do(ruleaza_verificare)
-    log.info("Programat la fiecare " + str(CONFIG["interval_ore"]) + " ore.")
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+    log.info("Verificare completa. GitHub Actions va rula din nou in 2 ore.")
 
 
 if __name__ == "__main__":
